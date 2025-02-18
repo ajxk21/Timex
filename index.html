@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOXICONS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Timex-Service Time Bank</title>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav_logo">
+            <a href="#" id="logoLink">
+                <img src="images/timex.png" alt="timex logo">
+            </a>
+        </div>
+        <div class="nav_menu">
+            <ul>
+                <li><a href="#" id="homeLink" class="link">Home</a></li>
+            </ul>
+        </div>
+        <div class="nav_buttons">
+            <a href="signin.html"><button class="btn" id="loginbtn">Sign In</button></a>
+            <a href="register.html"><button class="btn" id="registerbtn">Register</button></a>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <div class="content-container">
+            <!-- Hero Header Section -->
+            <header class="hero-header">
+                <h1 class="main-heading">Timex - A Service Time Bank</h1>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h2>Exchange Time, Share Care</h2>
+                        <p>Join our community of caregivers and create meaningful connections while managing your family's care needs.</p>
+                        <div class="hero-buttons">
+                            <a href="register.html"><button class="btn btn-primary" id="getStartedBtn">Get Started</button></a>
+                            <button class="btn btn-secondary" id="readMoreBtn">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">5000+</span>
+                            <span class="stat-label">Active Members</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10000+</span>
+                            <span class="stat-label">Hours Shared</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Description Section -->
+            <div class="description" id="descriptionSection">
+                <p>Welcome to Timex, your premier destination for community-based care support and time banking services. We understand the complex challenges of managing care responsibilities in today's fast-paced world, which is why we've created an innovative platform that connects people who need care support with those who can provide it.</p>
+                <p>Timex is a service-based platform where you can request assistance to care for your loved ones when time is limited. Whether it's an elderly family member, a child, or a differently-abled individual, our community of caregivers is here to help. By joining Timex, you can exchange care hours, build meaningful connections, and ensure your family's needs are met with trust and compassion.</p>
+                <p>Our platform is designed to make caregiving accessible and flexible. Simply sign up, request a service, and connect with a caregiver in your area. You can also offer your time to help others, earning credits that you can use for your own care needs. Together, we create a supportive network where everyone benefits.</p>
+                <p>Timex is more than just a service—it’s a community. We prioritize safety and trust, ensuring all caregivers are verified and reliable. Our user-friendly platform allows you to schedule services, track hours, and communicate seamlessly with caregivers. Whether you need occasional help or regular support, Timex is here to make caregiving easier and more efficient.</p>
+                <p>Join Timex today and experience the power of shared care. Let’s build a community where time is valued, and care is always within reach. Together, we can create a world where no one has to face caregiving challenges alone.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Existing scroll to top functionality
+        document.getElementById('logoLink').addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        document.getElementById('homeLink').addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // New button functionality
+        document.getElementById('readMoreBtn').addEventListener('click', function() {
+            const descriptionSection = document.getElementById('descriptionSection');
+            descriptionSection.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        });
+
+        document.getElementById('getStartedBtn').addEventListener('click', function() {
+            window.location.href = 'register.html'; // Redirect to register page
+        });
+
+        // Make the register button in nav also redirect to register page
+        document.getElementById('registerbtn').addEventListener('click', function() {
+            window.location.href = 'register.html';
+        });
+    </script>
+</body>
+</html>
