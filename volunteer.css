@@ -1,0 +1,200 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('images/bgimage.jpg') center/cover no-repeat fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative; /* Required for absolute positioning of the time credit */
+}
+
+/* Time Credit Display in Top-Left Corner */
+.time-credit-display {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+    color: #1a365d;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.time-credit-label {
+    font-weight: 500;
+}
+
+.time-credit-value {
+    font-weight: 600;
+    color: #007bff;
+    font-size: 1.2rem;
+}
+
+/* Volunteer Dashboard Container */
+.volunteer-container {
+    max-width: 800px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 100px; /* Ensure the container doesn't overlap with the time credit */
+    position: relative; /* So we can manage absolute elements inside it */
+}
+
+/* Volunteer Tabs */
+.volunteer-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center; /* Center the buttons horizontally */
+    position: fixed; /* Make the buttons fixed */
+    top: 60px; /* Position below the time credit */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 100; /* Ensure it stays above other content */
+    width: 100%; /* Full width */
+    max-width: 800px; /* Match container width */
+}
+
+.tab-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1a365d;
+    background-color: #e0e7ff;
+    border: 1px solid #c3dafe;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1; /* Make buttons take equal width */
+    text-align: center; /* Center text inside buttons */
+}
+
+.tab-button.active {
+    background: #1a365d;
+    color: white;
+    border: none;
+}
+
+.tab-button:hover {
+    background: #162d4c;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    padding-top: 30px; /* Ensures there's space from the top, making it uniform */
+    padding-left: 20px; /* Ensure it aligns with container padding */
+    padding-right: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Available Requests Section */
+.request-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.request-item {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.request-details p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+.accept-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
+    background: #1a365d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.accept-button:hover {
+    background: #162d4c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Schedules Section */
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.schedule-item {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-details p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+/* Completed Services Section */
+.completed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.completed-item {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.completed-details p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+.completed-details p strong {
+    color: #1a365d;
+}
+
+/* Rating Stars */
+.completed-details p strong[data-rating] {
+    color: #ffc107; /* Gold color for stars */
+}
