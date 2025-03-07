@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://127.0.0.1:5500/dashboard.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Timex</title>
+  <link rel="stylesheet" href="dashboard.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+
+  <!-- Dashboard Container -->
+  <div class="dashboard-container">
+    <!-- Left Side: User Details -->
+    <div class="user-details">
+      <h2>Timex Dashboard</h2>
+      <div class="details-box">
+        <div class="detail-item">
+          <span class="detail-label">Time Credits:</span>
+          <span class="detail-value" id="timeCredit">10 Hours</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Hours Volunteered:</span>
+          <span class="detail-value" id="hoursVolunteered">30 Hours</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Hours Availed:</span>
+          <span class="detail-value" id="hoursAvailed">20 Hours</span>
+        </div>
+        <!-- New Badges Section -->
+        <div class="detail-item">
+          <span class="detail-label">Badges Earned:</span>
+          <div class="badges-list">
+            <span class="badge">Helper</span>
+            <span class="badge">Supporter</span>
+            <span class="badge">Community Star</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side: Volunteer and Customer Options -->
+    <div class="options">
+      <h2>Choose Your Role</h2>
+      <div class="option-buttons">
+        <a href="volunteer.html" class="option-button">Volunteer</a>
+        <a href="customer.html" class="option-button">Customer</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to calculate Time Credit dynamically
+    const hoursVolunteered = parseInt(document.getElementById('hoursVolunteered').textContent); // Get hours volunteered
+    const hoursAvailed = parseInt(document.getElementById('hoursAvailed').textContent); // Get hours availed
+
+    // Calculate Time Credit
+    const timeCredit = hoursVolunteered - hoursAvailed;
+
+    // Update the Time Credit in the DOM
+    document.getElementById('timeCredit').textContent = `${timeCredit} Timex`;
+
+    // Set the user's name dynamically (you can replace "John Doe" with the actual username)
+    const userName = "Joseph Kurian"; // Replace with dynamic data from backend or user input
+    document.getElementById('userName').textContent = userName;
+  </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
