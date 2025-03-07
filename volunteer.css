@@ -55,7 +55,7 @@ body {
     gap: 10px;
     margin-bottom: 20px;
     justify-content: center; /* Center the buttons horizontally */
-    position: fixed; /* Make the buttons fixed */
+    position: relative; /* Make the buttons fixed */
     top: 60px; /* Position below the time credit */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Center horizontally */
