@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="admindash.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">Admin Panel</div>
+      <ul class="nav">
+        <li class="active" data-tab="dashboard"><a href="#"><span class="material-icons">dashboard</span> Dashboard</a></li>
+        <li data-tab="active-volunteers"><a href="#"><span class="material-icons">assignment</span> Active Volunteers</a></li>
+        <li data-tab="members"><a href="#"><span class="material-icons">group</span> Members</a></li>
+        <li><a href="#"><span class="material-icons">settings</span> Settings</a></li>
+        <li onclick="logout()"><a href="#"><span class="material-icons">logout</span> Logout</a></li>
+
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="header">
+        <h1>Dashboard</h1>
+        <div class="user-info">
+          <span class="material-icons">account_circle</span>
+          <span>Admin</span>
+        </div>
+      </div>
+
+      <!-- Dashboard Tab -->
+      <div id="dashboard" class="tab-content active">
+        <div class="section">
+          <h2>New Members for Confirmation</h2>
+          <div id="new-members-list" class="card-container">
+            <!-- Dynamically populated with JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Volunteers Tab -->
+      <div id="active-volunteers" class="tab-content">
+        <div class="section">
+          <h2>Active Volunteers</h2>
+          <div class="service-filters">
+            <button class="filter-button active" data-service="all">All</button>
+            <button class="filter-button" data-service="child-care">Child Care</button>
+            <button class="filter-button" data-service="elderly-care">Elderly Care</button>
+            <button class="filter-button" data-service="differently-abled-care">Differently Abled Care</button>
+          </div>
+          <div id="active-volunteers-list" class="card-container">
+            <!-- Dynamically populated with JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Members Tab -->
+      <div id="members" class="tab-content">
+        <div class="section">
+          <h2>All Members</h2>
+          <div id="members-list" class="card-container">
+            <!-- Dynamically populated with JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="admindash.js"></script>
+</body>
+</html>

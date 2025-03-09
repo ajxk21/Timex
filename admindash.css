@@ -1,0 +1,261 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background-color: #f4f7f6;
+  }
+  
+  /* Admin Container */
+  .admin-container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 250px;
+    background-color: #1a365d;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar .logo {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .sidebar .nav {
+    list-style: none;
+    flex: 1;
+  }
+  
+  .sidebar .nav li {
+    margin-bottom: 15px;
+  }
+  
+  .sidebar .nav li a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar .nav li a:hover {
+    background-color: #162d4c;
+  }
+  
+  .sidebar .nav li a .material-icons {
+    margin-right: 10px;
+  }
+  
+  .sidebar .nav li.active a {
+    background-color: #162d4c;
+  }
+  
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f7f6;
+  }
+  
+  .main-content .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .main-content .header h1 {
+    font-size: 24px;
+    color: #1a365d;
+  }
+  
+  .main-content .header .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #1a365d;
+  }
+  
+  /* Sections */
+  .section {
+    margin-bottom: 30px;
+  }
+  
+  .section h2 {
+    font-size: 20px;
+    color: #1a365d;
+    margin-bottom: 15px;
+  }
+  
+  /* Card Container */
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Member and Service Cards */
+  .member-card, .service-customer-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .member-details, .service-details {
+    margin-bottom: 15px;
+  }
+  
+  .member-details p, .service-details p {
+    margin: 5px 0;
+    color: #333;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .actions button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .actions .accept {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .actions .accept:hover {
+    background-color: #45a049;
+  }
+  
+  .actions .reject {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .actions .reject:hover {
+    background-color: #e53935;
+  }
+
+  /* Tab Content */
+.tab-content {
+    display: none;
+  }
+  
+  .tab-content.active {
+    display: block;
+  }
+
+/* Service Filters */
+.service-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .service-filters .filter-button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .service-filters .filter-button.active {
+    background-color: #1a365d;
+    color: white;
+  }
+  
+  .service-filters .filter-button:hover {
+    background-color: #ccc;
+  }
+/* Member Type Toggle */
+.member-type-toggle {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .member-type-toggle .toggle-button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .member-type-toggle .toggle-button.active {
+    background-color: #1a365d;
+    color: white;
+  }
+  
+  .member-type-toggle .toggle-button:hover {
+    background-color: #ccc;
+  }
+  
+  /* Member Type Sections */
+  .member-type-section {
+    display: none;
+  }
+  
+  .member-type-section.active {
+    display: block;
+  }
+/* Service Filters */
+.service-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .service-filters .filter-button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .service-filters .filter-button.active {
+    background-color: #1a365d;
+    color: white;
+  }
+  
+  .service-filters .filter-button:hover {
+    background-color: #ccc;
+  }
+  
+  /* Tab Content */
+  .tab-content {
+    display: none;
+  }
+  
+  .tab-content.active {
+    display: block;
+  }
