@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: url('images/signup.jpg') no-repeat center center/cover;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 25px 30px;
+  border-radius: 10px; /* Slightly larger border radius */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+}
+
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+  margin-bottom: 20px; /* Added margin for spacing */
+}
+
+.container .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: #1a365d;
+}
+
+.content form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+
+form .input-box span.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #333; /* Darker text for better readability */
+}
+
+.user-details .input-box input,
+.user-details .input-box select {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 14px; /* Slightly smaller font size */
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid,
+.user-details .input-box select:focus,
+.user-details .input-box select:valid {
+  border-color: #1a365d;
+}
+
+/* Smaller Dropdown Styles */
+.user-details .input-box .small-dropdown {
+  height: 40px; /* Reduced height */
+  font-size: 14px; /* Smaller font size */
+  padding: 5px 10px; /* Adjusted padding */
+}
+
+form .button {
+  height: 45px;
+  margin: 25px 0 15px 0; /* Adjusted margin for better spacing */
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 16px; /* Slightly smaller font size */
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #1a365d;
+}
+
+form .button input:hover {
+  background: #162d4c;
+}
+
+/* Responsive styles */
+@media(max-width: 584px) {
+  .container {
+    max-width: 100%;
+    padding: 20px; /* Reduced padding for smaller screens */
+  }
+
+  form .user-details .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  .content form .user-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+
+  .user-details::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+
+@media(max-width: 459px) {
+  .container .content .category {
+    flex-direction: column;
+  }
+}
+
+.sign-in-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.sign-in-link span {
+  font-size: 14px; /* Slightly smaller font size */
+  font-weight: 500;
+}
+
+.sign-in-link a {
+  color: #1a365d;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.sign-in-link a:hover {
+  text-decoration: underline;
+}
