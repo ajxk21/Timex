@@ -1,0 +1,134 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('images/bgimage.jpg') center/cover no-repeat fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.dashboard-container {
+  max-width: 600px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Service Details Box */
+.service-details {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.service-details p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Form Styling */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Review Box */
+#review {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: none;
+  transition: 0.3s;
+}
+
+#review:focus {
+  border-color: #1a365d;
+  box-shadow: 0 0 8px rgba(26, 54, 93, 0.2);
+  outline: none;
+}
+
+/* Submit Button */
+.submit-button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(45deg, #1a365d, #283e6b);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background: linear-gradient(45deg, #162d4c, #1f325a);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Star Rating Styles */
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px 0;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  font-size: 2.5rem;
+  color: #d3d3d3;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+  color: gold;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+/* Home Button Styles */
+.home-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  color: #1a365d;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.home-button a {
+  color: #1a365d;
+  text-decoration: none;
+}
+
+.home-button:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

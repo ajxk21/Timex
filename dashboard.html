@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Timex</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">Timex</div>
+    <div class="logout-container">
+      <a href="#" class="logout-button"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+  </nav>
+
+  <!-- Dashboard Container -->
+  <div class="dashboard-container">
+    <!-- Left Side: User Details -->
+    <div class="user-details">
+      <h2><i class="fas fa-user"></i> Timex Dashboard</h2>
+      <div class="details-box">
+        <div class="detail-item">
+          <span class="detail-label"><i class="fas fa-coins"></i> Time Credits:</span>
+          <span class="detail-value" id="timeCredit">10 Hours</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label"><i class="fas fa-hand-holding-heart"></i> Hours Volunteered:</span>
+          <span class="detail-value" id="hoursVolunteered">30 Hours</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label"><i class="fas fa-clock"></i> Hours Availed:</span>
+          <span class="detail-value" id="hoursAvailed">20 Hours</span>
+        </div>
+        <!-- Badges Section -->
+        <div class="detail-item">
+          <span class="detail-label"><i class="fas fa-award"></i> Badges Earned:</span>
+          <div class="badges-list">
+            <span class="badge"><i class="fas fa-hands-helping"></i> Helper</span>
+            <span class="badge"><i class="fas fa-heart"></i> Supporter</span>
+            <span class="badge"><i class="fas fa-star"></i> Community Star</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side: Volunteer and Customer Options -->
+    <div class="options">
+      <h2><i class="fas fa-tasks"></i> Choose Your Role</h2>
+      <div class="option-buttons">
+        <a href="volunteer.html" class="option-button"><i class="fas fa-hands-helping"></i> Volunteer</a>
+        <a href="customer.html" class="option-button"><i class="fas fa-user-clock"></i> Customer</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to calculate Time Credit dynamically
+    const hoursVolunteered = parseInt(document.getElementById('hoursVolunteered').textContent); // Get hours volunteered
+    const hoursAvailed = parseInt(document.getElementById('hoursAvailed').textContent); // Get hours availed
+
+    // Calculate Time Credit
+    const timeCredit = hoursVolunteered - hoursAvailed;
+
+    // Update the Time Credit in the DOM
+    document.getElementById('timeCredit').textContent = `${timeCredit} Timex`;
+  </script>
+</body>
+</html>
