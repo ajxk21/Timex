@@ -4,21 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Customer Dashboard</title>
-  <link rel="stylesheet" href="customer.css"> <!-- Link to the CSS file -->
+  <link rel="stylesheet" href="customer.css">
 </head>
 <body>
+
   <!-- Home Button -->
   <div class="home-button">
     <a href="dashboard.html"><i class="fas fa-home"></i> Home</a>
   </div>
 
-  <!-- Time Credit Display in Top-Left Corner -->
+  <!-- Time Credit Display -->
   <div class="time-credit-display">
     <span class="time-credit-label">Time Credit:</span>
     <span class="time-credit-value" id="timeCredit">10 Hours</span>
   </div>
 
-  <!-- Fixed Tab Section Container -->
+  <!-- Fixed Tab Section -->
   <div class="fixed-tab-container">
     <div class="dashboard-tabs">
       <button class="tab-button active" onclick="showTab('requests')">Requests</button>
@@ -29,7 +30,7 @@
 
   <!-- Dashboard Container -->
   <div class="dashboard-container">
-    <!-- Requests Tab (Default) -->
+    <!-- Requests Tab -->
     <div id="requests" class="tab-content active">
       <h2>Submit a Service Request</h2>
       <form class="request-form">
@@ -37,10 +38,12 @@
           <label for="date">Date of Service:</label>
           <input type="date" id="date" name="date" required>
         </div>
+        
         <div class="form-group">
           <label for="time">Time of Service:</label>
-          <input type="time" id="time" name="time" required>
+          <input type="text" id="time" name="time" placeholder="HH:MM AM/PM" required>
         </div>
+
         <div class="form-group">
           <label for="serviceType">Type of Service Needed:</label>
           <select id="serviceType" name="serviceType" required>
@@ -49,10 +52,28 @@
             <option value="differentlyAbled">Differently Abled Care</option>
           </select>
         </div>
+
         <div class="form-group">
-          <label for="duration">Duration (in hours):</label>
-          <input type="number" id="duration" name="duration" min="1" required>
+          <label for="duration">Duration:</label>
+          <select id="duration" name="duration" required>
+            <option value="1">1 Hour</option>
+            <option value="2">2 Hours</option>
+            <option value="3">3 Hours</option>
+            <option value="4">4 Hours</option>
+            <option value="5">5 Hours</option>
+            <option value="6">6 Hours</option>
+            <option value="7">7 Hours</option>
+            <option value="8">8 Hours</option>
+            <option value="9">9 Hours</option>
+            <option value="10">10 Hours</option>
+          </select>
         </div>
+
+        <div class="form-group">
+          <label for="condition">Description:</label>
+          <textarea id="condition" name="condition" rows="3" placeholder="Mention the essential information that the volunteer should be aware of...." required></textarea>
+        </div>
+
         <button type="submit" class="submit-button">Submit Request</button>
       </form>
     </div>
@@ -61,10 +82,9 @@
     <div id="schedules" class="tab-content">
       <h2>Your Schedules</h2>
       <div class="schedule-list">
-        <!-- Schedule 1 -->
         <div class="schedule-item">
           <div class="schedule-details">
-            <p><strong>Customer:</strong> John Mathew</p>
+            <p><strong>Volunteer:</strong> John Mathew</p>
             <p><strong>Date:</strong> 2023-10-25</p>
             <p><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
             <p><strong>Service Type:</strong> Elderly Care</p>
@@ -72,10 +92,9 @@
           </div>
         </div>
 
-        <!-- Schedule 2 -->
         <div class="schedule-item">
           <div class="schedule-details">
-            <p><strong>Customer:</strong> Rajesh Manoj</p>
+            <p><strong>Volunteer:</strong> Rajesh Manoj</p>
             <p><strong>Date:</strong> 2023-10-26</p>
             <p><strong>Time:</strong> 3:00 PM - 5:00 PM</p>
             <p><strong>Service Type:</strong> Child Care</p>
@@ -89,7 +108,6 @@
     <div id="feedback" class="tab-content">
       <h2>Completed Services and Feedback</h2>
       <div class="completed-list">
-        <!-- Completed Service 1 -->
         <div class="completed-item">
           <div class="completed-details">
             <p><strong>Customer:</strong> Ravi Nambiar</p>
@@ -102,7 +120,6 @@
           <a href="feedback.html" class="feedback-button">Give Feedback</a>
         </div>
 
-        <!-- Completed Service 2 -->
         <div class="completed-item">
           <div class="completed-details">
             <p><strong>Customer:</strong> Mathew John</p>
@@ -119,35 +136,27 @@
   </div>
 
   <script>
-    // JavaScript to calculate Time Credit dynamically
-    const hoursVolunteered = 30; // Replace with dynamic data from backend
-    const hoursAvailed = 20; // Replace with dynamic data from backend
-
-    // Calculate Time Credit
+    // Time Credit Calculation
+    const hoursVolunteered = 30;
+    const hoursAvailed = 20;
     const timeCredit = hoursVolunteered - hoursAvailed;
-
-    // Update the Time Credit in the DOM
     document.getElementById('timeCredit').textContent = `${timeCredit} Hours`;
 
-    // JavaScript to handle tab switching
+    // Tab Switching Logic
     function showTab(tabName) {
-      // Hide all tab content
-      document.querySelectorAll('.tab-content').forEach(tab => {
-        tab.classList.remove('active');
-      });
-
-      // Show the selected tab content
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
       document.getElementById(tabName).classList.add('active');
-
-      // Update the active tab button
-      document.querySelectorAll('.tab-button').forEach(button => {
-        button.classList.remove('active');
-      });
+      document.querySelectorAll('.tab-button').forEach(button => button.classList.remove('active'));
       document.querySelector(`[onclick="showTab('${tabName}')"]`).classList.add('active');
     }
 
-    // Set Requests as the default tab
     showTab('requests');
+
+    // Time Picker for AM/PM format
+    document.getElementById('time').addEventListener('focus', function () {
+      this.type = 'time';
+    });
+
   </script>
 </body>
 </html>
