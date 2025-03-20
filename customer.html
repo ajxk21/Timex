@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Dashboard</title>
+  <link rel="stylesheet" href="customer.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+  <!-- Home Button -->
+  <div class="home-button">
+    <a href="dashboard.html"><i class="fas fa-home"></i> Home</a>
+  </div>
+
+  <!-- Time Credit Display in Top-Left Corner -->
+  <div class="time-credit-display">
+    <span class="time-credit-label">Time Credit:</span>
+    <span class="time-credit-value" id="timeCredit">10 Hours</span>
+  </div>
+
+  <!-- Fixed Tab Section Container -->
+  <div class="fixed-tab-container">
+    <div class="dashboard-tabs">
+      <button class="tab-button active" onclick="showTab('requests')">Requests</button>
+      <button class="tab-button" onclick="showTab('schedules')">Schedules</button>
+      <button class="tab-button" onclick="showTab('feedback')">Feedback</button>
+    </div>
+  </div>
+
+  <!-- Dashboard Container -->
+  <div class="dashboard-container">
+    <!-- Requests Tab (Default) -->
+    <div id="requests" class="tab-content active">
+      <h2>Submit a Service Request</h2>
+      <form class="request-form">
+        <div class="form-group">
+          <label for="date">Date of Service:</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="time">Time of Service:</label>
+          <input type="time" id="time" name="time" required>
+        </div>
+        <div class="form-group">
+          <label for="serviceType">Type of Service Needed:</label>
+          <select id="serviceType" name="serviceType" required>
+            <option value="child">Child Care</option>
+            <option value="elderly">Elderly Care</option>
+            <option value="differentlyAbled">Differently Abled Care</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="duration">Duration (in hours):</label>
+          <input type="number" id="duration" name="duration" min="1" required>
+        </div>
+        <button type="submit" class="submit-button">Submit Request</button>
+      </form>
+    </div>
+
+    <!-- Schedules Tab -->
+    <div id="schedules" class="tab-content">
+      <h2>Your Schedules</h2>
+      <div class="schedule-list">
+        <!-- Schedule 1 -->
+        <div class="schedule-item">
+          <div class="schedule-details">
+            <p><strong>Customer:</strong> John Mathew</p>
+            <p><strong>Date:</strong> 2023-10-25</p>
+            <p><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
+            <p><strong>Service Type:</strong> Elderly Care</p>
+            <p><strong>Duration:</strong> 2 Hours</p>
+          </div>
+        </div>
+
+        <!-- Schedule 2 -->
+        <div class="schedule-item">
+          <div class="schedule-details">
+            <p><strong>Customer:</strong> Rajesh Manoj</p>
+            <p><strong>Date:</strong> 2023-10-26</p>
+            <p><strong>Time:</strong> 3:00 PM - 5:00 PM</p>
+            <p><strong>Service Type:</strong> Child Care</p>
+            <p><strong>Duration:</strong> 2 Hours</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feedback Tab -->
+    <div id="feedback" class="tab-content">
+      <h2>Completed Services and Feedback</h2>
+      <div class="completed-list">
+        <!-- Completed Service 1 -->
+        <div class="completed-item">
+          <div class="completed-details">
+            <p><strong>Customer:</strong> Ravi Nambiar</p>
+            <p><strong>Date:</strong> 2023-10-20</p>
+            <p><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
+            <p><strong>Service Type:</strong> Differently Abled Care</p>
+            <p><strong>Duration:</strong> 2 Hours</p>
+            <p><strong>Rating:</strong> ⭐⭐⭐⭐ (4/5)</p>
+          </div>
+          <a href="feedback.html" class="feedback-button">Give Feedback</a>
+        </div>
+
+        <!-- Completed Service 2 -->
+        <div class="completed-item">
+          <div class="completed-details">
+            <p><strong>Customer:</strong> Mathew John</p>
+            <p><strong>Date:</strong> 2023-10-22</p>
+            <p><strong>Time:</strong> 3:00 PM - 5:00 PM</p>
+            <p><strong>Service Type:</strong> Elderly Care</p>
+            <p><strong>Duration:</strong> 2 Hours</p>
+            <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐ (5/5)</p>
+          </div>
+          <a href="feedback.html" class="feedback-button">Give Feedback</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to calculate Time Credit dynamically
+    const hoursVolunteered = 30; // Replace with dynamic data from backend
+    const hoursAvailed = 20; // Replace with dynamic data from backend
+
+    // Calculate Time Credit
+    const timeCredit = hoursVolunteered - hoursAvailed;
+
+    // Update the Time Credit in the DOM
+    document.getElementById('timeCredit').textContent = `${timeCredit} Hours`;
+
+    // JavaScript to handle tab switching
+    function showTab(tabName) {
+      // Hide all tab content
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+
+      // Show the selected tab content
+      document.getElementById(tabName).classList.add('active');
+
+      // Update the active tab button
+      document.querySelectorAll('.tab-button').forEach(button => {
+        button.classList.remove('active');
+      });
+      document.querySelector(`[onclick="showTab('${tabName}')"]`).classList.add('active');
+    }
+
+    // Set Requests as the default tab
+    showTab('requests');
+  </script>
+</body>
+</html>
